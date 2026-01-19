@@ -353,18 +353,6 @@ closeBtn.addEventListener('click', () => {
     suggestionBox.classList.remove('expanded');
 }); 
 
-// --- SANITIZATION FUNCTION ---
-function escapeHtml(text) {
-    const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    };
-    return text.replace(/[&<>"']/g, m => map[m]);
-}
-
 // --- API HELPER FUNCTION (Calls Backend Server) ---
 async function callAPI(message) {
     // Validate input length (max 5000 characters)
@@ -478,4 +466,5 @@ const analyzeBtn = document.getElementById("analyzeBtn");
 analyzeBtn.addEventListener('click', () => {
     // FIX: Use .value for textareas!
     run();
+
 });
