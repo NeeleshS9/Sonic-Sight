@@ -277,7 +277,6 @@ header {
     word-wrap: break-word;
     overflow-y: auto;
     max-height: 200px;
-    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     line-height: 1.5;
 }
@@ -697,4 +696,5 @@ header {
     border-top: 1px solid #333;
     font-size: 0.8rem;
     color: #777;
+
 }
