@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Limelight&display=swap');
+
+.limelight-regular {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fascinate-regular {
+  font-family: "Fascinate", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+header {
+    /* Replace #123456 with your logo's exact color code */
+    background: linear-gradient(to right, #47eb47, #af46e8); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.heading {
+    color: white;
+    font-size: 3rem;
+}
+
+.logo {
+    width: 90px;
+    object-position: center;
+    object-fit: contain;
+    border-radius:  40px;
+}
+
+.hide{
+    opacity: 1;
+    padding: 10px;
+    display: flexbox;
+    justify-items: center;
+    text-align: center;
+    height: 100vh;
+    align-content: center;
+}
+
+.site-aim {
+    font-size: 4rem;
+    animation: scale 1.2s ease-in-out 1;
+    color: white;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.75);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.aim {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.get-started {
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(31, 126, 204);
+    color: white;
+    font-size: 1.15rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.container {
+    padding: 20px;
+}
+
+.flex-box {
+    display: flex;
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    background: #2e2e2e;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.lang-selector i {
+    color: #af46e8; /* Matches your frequency gauge color */
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+#Language {
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+#Language option {
+    background: #1a1a1a;
+    color: white;
+}
+
+.status-box {
+    display: flex;
+    width: 30%;
+    height: 200px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid transparent; /* The border must be transparent */
+    border-radius: 20px;
+    
+    /* The first gradient is the inner box color, 
+        the second is the border color */
+    background: 
+        linear-gradient(rgb(40, 37, 37),black) padding-box, 
+        linear-gradient(to right, #47eb47, #af46e8) border-box;
+}
+
+.acc-box {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(rgb(62, 62, 62), rgb(28, 21, 21));
+    border-radius: 20px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.freq-box {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(rgb(62, 62, 62), rgb(28, 21, 21));
+    border-radius: 20px;
+    margin-left: 10px;
+    text-align: center;
+    align-content: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.label {
+    font-size: 1.2rem; /* Reduced from 2rem to fit the 200px box height */
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#accValue {
+    background: linear-gradient(to right, #47eb47, #af46e8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 1000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#freqValue {
+    background: linear-gradient(to right, #47eb47, #af46e8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 1000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Keep your existing .status-box, .acc-box, and .freq-box code */
+
+.gauge-container {
+    position: relative;
+    width: 100%;    /* Changed from 240px to 100% to fit the box */
+    height: 100px;   /* Adjusted height to fit within 200px total box height */
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#accuracyGauge, #frequencyGauge {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.gauge-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(to right, #47eb47, #af46e8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem; /* Scaled down slightly to fit better */
+    font-weight: 1000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.box {
+    width: 70%;
+    height: 200px;
+    margin-bottom: 10px;
+    background-color: black;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid transparent; /* The border must be transparent */
+    border-radius: 20px;
+    
+    /* The first gradient is the inner box color, 
+        the second is the border color */
+    background: 
+        linear-gradient(rgb(40, 37, 37),black) padding-box, 
+        linear-gradient(to right, #47eb47, #af46e8) border-box;
+}
+
+.box-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.play{
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+#visualizer {
+    margin-top: 10px;
+    width: 100%;
+    height:  calc(80vh - 300px - 50px);
+    border-radius: 10px;
+    display: block;
+}
+
+#text {
+    min-height: 50px;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #ffffff; /* Changed to white for visibility on dark background */
+    word-wrap: break-word;
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+/* --- Core Container --- */
+.main-container {
+    display: flex;
+    align-items: stretch; /* Forces button area to match graph height */
+    position: relative;
+    width: 100%;
+    /* Matching your calc to ensure consistency */
+    height: calc(80vh - 300px); 
+    background: black;
+    margin-top: 15px; /* Unified margin for the whole row */
+    overflow: visible; /* Allows shadows/borders to show */
+}
+
+/* --- Graph Box --- */
+.graph-box {
+    flex: 1;
+    transition: all 0.5s ease-in-out;
+    background-color: black;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    /* Removed margin-top/right to allow perfect alignment with button */
+    background: 
+        linear-gradient(rgb(40, 37, 37), black) padding-box, 
+        linear-gradient(to right, #47eb47, #af46e8) border-box;
+}
+
+.settings-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#tittle {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.setting {
+    color:  white;
+    cursor: pointer;
+    width: 30px;
+}
+
+.mode-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 30px;    /* Adjust based on icon size */
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    opacity: 0.5;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+    min-width: 100px;
+}
+
+/* Show the menu when this class is added via JS */
+.mode-menu.active {
+    display: block;
+}
+
+.mode-option {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mode-option:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Suggestion Area --- */
+.suggestion-area {
+    display: flex;
+    align-items: stretch;
+    margin-left: 15px; /* The gap between graph and button */
+}
+
+/* --- Vertical Button --- */
+.sug-btn {
+    height: 100%; /* Stretches to match .main-container height */
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers the text VERTICALLY on the line */
+    background: green;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: sans-serif;
+    z-index: 10;
+    transition: width 0.4s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.sug-btn{
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.sug-btn .btn-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* --- The AI Panel --- */
+.suggestion-panel {
+    width: 0;
+    height: 100%; /* Matches graph height */
+    opacity: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: 
+        linear-gradient(rgb(40, 37, 37), black) padding-box, 
+        linear-gradient(to right, #47eb47, #af46e8) border-box;
+    color: white;
+    transition: width 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Open State Logic */
+.suggestion-area.active .sug-btn {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+.suggestion-area.active .suggestion-panel {
+    width: 350px; 
+    opacity: 1;
+}
+
+/* The Expanded State */
+.suggestion-panel.expanded {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh; /* Full screen height */
+    width: 350px;  /* Keep the same geometric width */
+    z-index: 1000; /* Ensure it is above everything else */
+    border-radius: 0; /* Optional: remove radius for a flush look */
+    margin: 0;
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.8); /* Stronger shadow for the top layer */
+}
+
+/* Make sure the panel-body stretches to fill the 100vh */
+.suggestion-panel.expanded .panel-body {
+    height: calc(100vh - 60px); /* Subtract header height */
+}
+
+/* Style the icons for better visibility */
+#expend, #closePanel {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    padding: 5px;
+}
+
+#expend:hover {
+    color: #47eb47;
+    transform: scale(1.2);
+}
+
+/* --- Panel Internal Elements --- */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+/* Ensure the body fills the entire panel height */
+.panel-body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 50px); /* Subtract header height */
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent the body itself from scrolling */
+}
+
+/* 1. Chat Display: This takes up all available space and scrolls */
+.chat-display {
+    flex: 1; /* Grows to fill space */
+    overflow-y: auto; /* Adds scrollbars when content exceeds area */
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    /* Modern Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: #47eb47 #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Styling for Markdown elements inside the suggestion box */
+.chat-display h1, .chat-display h2, .chat-display h3 {
+    color: #47eb47; /* Neon Green for headers */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.chat-display strong {
+    color: #af46e8; /* Light Purple for bold emphasis */
+    font-weight: bold;
+}
+
+.chat-display p {
+    margin-bottom: 12px;
+}
+
+.chat-display ul, .chat-display ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.chat-display li {
+    margin-bottom: 5px;
+}
+
+/* Chrome/Safari Scrollbar styling */
+.chat-display::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-display::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+.chat-display::-webkit-scrollbar-thumb {
+    background: #47eb47;
+    border-radius: 10px;
+}
+
+.panel-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure body takes up full panel height */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* 2. Input Group: Always stays at the bottom */
+.input-group {
+    flex-shrink: 0; /* Prevents it from being squashed */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#userInput {
+    width: 100%;
+    height: 60px; /* Fixed height for typing */
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.panel-body textarea {
+    width: 100%;
+    height: 3rem; /* Adjusted for better visibility */
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #47eb47, #af46e8);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.site-footer {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+    border-top: 2px solid #4285F4; /* Google Blue accent */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    height: 40px;
+    border-radius: 20px;
+}
+
+.footer-logo span {
+    font-size: 1.5rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 0.9rem;
+    color: #4285F4;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: #4285F4;
+}
+
+/* System Live Status Dot */
+.status-indicator {
+    font-size: 0.8rem;
+    color: #4cd137;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #4cd137;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #4cd137;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #777;
+}

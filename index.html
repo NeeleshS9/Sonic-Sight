@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Rubik+Mono+One&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Sonic-Sight</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="./logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="./logo.png" class="logo" alt="site-logo" />
+        <h1 class="heading limelight-regular">Sonic Sight</h1>
+    </header>
+    <main>
+        <div class="hide">
+            <h1 class="site-aim fascinate-regular">Aim</h1>
+            <p class="aim">To bridge the gap between sound and sight. Sonic Sight provides real-time visual feedback on speech patterns and volume, empowering the deaf and hard-of-hearing community to speak with confidence. By turning sound waves into interactive visual data, we help users master their vocal presence and foster deeper connections with the world around them.</p>
+            <button class="get-started">Get Started</button>
+        </div>
+
+        <div class="container">
+            <div class="flex-box">
+                <div class="box">
+                    <div class="box-head">
+                        <i class="fa-solid fa-play play"></i>
+                        <select id="Language">
+                            <option value="en-US">English (US)</option>
+                            <option value="en-GB">English (UK)</option>
+                            <option value="hi-IN">Hindi (India)</option>
+                            <option value="es-ES">Spanish (Spain)</option>
+                            <option value="fr-FR">French (France)</option>
+                        </select>
+                    </div>
+                    <p id="text">
+
+                    </p>
+                </div>
+                <div class="status-box">
+                    <div class="acc-box">
+                        <span class="label">Accuracy</span>
+                        <div class="gauge-container">
+                            <canvas id="accuracyGauge"></canvas>
+                            <div id="accValue" class="gauge-text">0 %</div>
+                        </div>
+                    </div>
+                    <div class="freq-box">
+                        <span class="label">Frequency</span>
+                        <div class="gauge-container">
+                            <canvas id="frequencyGauge"></canvas>
+                            <div id="freqValue" class="gauge-text">0 Hz</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-container">
+                <div class="graph-box">
+                    <div class="settings-container">
+                        <i class="fa-solid fa-gear setting" id="settings-icon"></i>
+                        <div class="mode-menu" id="mode-menu">
+                            <p>Mode</p>
+                            <span class="mode-option">Normal</span>
+                            <span class="mode-option">Whisper</span>
+                            <span class="mode-option">Speaker</span>
+                        </div>
+                        <h3 id="tittle">Normal</h3>
+                    </div>
+                    <canvas id="visualizer"></canvas>
+                </div>
+
+                <div class="suggestion-area">
+                    <button id="suggestBtn" class="sug-btn">
+                        <span class="btn-text">Suggestion</span>
+                    </button>
+                    
+                    <div id="suggestionBox" class="suggestion-panel">
+                        <div class="panel-header">
+                            <span>AI Suggestion</span>
+                            <div class="control-div">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center" id="expend"></i>
+                                <i class="fa-solid fa-xmark" id="closePanel"></i>                            
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="chat-display"></div>
+                            
+                            <div class="input-group">
+                                <textarea id="userInput" placeholder="Ask something..."></textarea>
+                                <button class="submit-btn" id="sendBtn">Send Message</button>
+                                <button class="submit-btn" id="analyzeBtn">Analyze</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+                  
+        </div>    
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <div class="footer-logo">
+                    <img src="./logo.png" alt="Sonic Sight Logo">
+                    <span class="limelight-regular">Sonic Sight</span>
+                </div>
+                <p>Empowering the hard-of-hearing community through real-time visual sound patterns.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle-info"></i> About Aim</a></li>
+                    <li><a href="#"><i class="fa-solid fa-universal-access"></i> Accessibility</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="status-indicator">
+                    <span class="dot"></span> System Live
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sonic Sight | Built with Google Firebase & Gemini</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBPPwFVnrMSkUcO9b14RXCMD7Y9hOD3dkY",
+            authDomain: "sonic-sight-5735c.firebaseapp.com",
+            projectId: "sonic-sight-5735c",
+            storageBucket: "sonic-sight-5735c.firebasestorage.app",
+            messagingSenderId: "169744522814",
+            appId: "1:169744522814:web:a6f95e7a97f48af2923b6f",
+            measurementId: "G-S0WP37DC1Q"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</body>
+</html>
